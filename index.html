@@ -3,98 +3,289 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Rosu Cafe - Homecooked and local food in the village of Apoera">
-    <title>Rosu Cafe - Apoera</title>
+    <meta name="description" content="Apoera Cafe - Fresh local food and warm hospitality in the heart of Apoera village">
+    <title>Apoera Cafe</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="container">
-                <h1 class="logo">Rosu Cafe</h1>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#menu">Menu</a></li>
-                    <li><a href="#contact">Contact</a></li>
+    <!-- Navigation -->
+    <header id="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#home" class="nav-logo">
+                    <span class="material-icons">bakery_dining</span>
+                    <span>Apoera Cafe</span>
+                </a>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span class="material-icons">menu</span>
+                </button>
+                <ul class="nav-links" id="navLinks">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#menu" class="nav-link">Menu</a></li>
+                    <li><a href="#cakes" class="nav-link">Cakes</a></li>
+                    <li><a href="#location" class="nav-link">Location</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#location" class="nav-cta">Visit Us</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="hero-content">
-                <h2>Welcome to Rosu Cafe</h2>
-                <p>Authentic homecooked and local food in the heart of Apoera</p>
-                <a href="#about" class="cta-button">Discover More</a>
+                <h1>Welcome to Apoera Cafe</h1>
+                <p>Experience fresh local food and warm hospitality in the heart of our beautiful village.</p>
+                <a href="#menu" class="btn btn-primary">View Menu</a>
             </div>
         </section>
 
-        <section id="about" class="about">
+        <!-- About Section -->
+        <section id="about" class="about section">
             <div class="container">
-                <h2>About Us</h2>
-                <div class="about-content">
-                    <p>
-                        Welcome to Rosu Cafe, a charming establishment nestled in the beautiful village of Apoera. 
-                        We take pride in serving authentic homecooked meals made with love and the freshest local ingredients.
-                    </p>
-                    <p>
-                        Our commitment is to bring you the flavors of our region, prepared with traditional recipes 
-                        passed down through generations. Every dish tells a story of our community and heritage.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="menu" class="menu">
-            <div class="container">
-                <h2>Our Offerings</h2>
-                <div class="menu-grid">
-                    <div class="menu-item">
-                        <h3>Homecooked Meals</h3>
-                        <p>Traditional dishes prepared fresh daily with locally sourced ingredients</p>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>A Local Favorite Since Always</h2>
+                        <p>
+                            Nestled in the vibrant heart of Apoera, our cafe is more than just a place to eat—it's a
+                            gathering spot for neighbors and travelers alike. We pride ourselves on using locally sourced
+                            ingredients to bring you the authentic flavors of our village. Whether you're here for your
+                            morning coffee or a hearty afternoon sandwich, you'll always find a warm smile and a cozy
+                            seat waiting for you.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-badge">
+                                <span class="material-icons">favorite</span>
+                                <span>Community Focused</span>
+                            </div>
+                            <div class="feature-badge">
+                                <span class="material-icons">eco</span>
+                                <span>Fresh Ingredients</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="menu-item">
-                        <h3>Local Specialties</h3>
-                        <p>Experience the authentic flavors of Apoera with our regional specialties</p>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Fresh Ingredients</h3>
-                        <p>We source our ingredients from local farmers and producers</p>
-                    </div>
-                    <div class="menu-item">
-                        <h3>Daily Specials</h3>
-                        <p>Ask about our daily specials featuring seasonal produce</p>
+                    <div class="about-image">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIgZFAyWURZ1IGdnOq9d74hXIw3r9Et2t0sR56xGRKRuzjFpupu9qSzZQUfXajNqDi2b3ic_8fdMI2B0kSZE8k8vR2ILis4TITCJCINQ1niQ6pUGJMURIQTHKUkQBKn9GxPFSLcsdqSk5-C-8ioULzVU7fyB5VsHbkkJgcLq6UXRKAB8pjC0VYEjVmXWmoMBSCk4RHUQER3aW5DZdOhf6hCUhYByf7YHXR88L-wPZR0YJZDh6EvcqFbchmTc3jwWzODMxt9_FdgIUQ" alt="Inside Apoera Cafe" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact">
+        <!-- Cakes Section -->
+        <section id="cakes" class="cakes section section-alt">
             <div class="container">
-                <h2>Visit Us</h2>
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <h3>Location</h3>
-                        <p>Apoera Village</p>
+                <div class="cakes-grid">
+                    <div class="cakes-text">
+                        <h2>Custom Cakes for Every Occasion</h2>
+                        <p>
+                            We bake delicious custom cakes for weddings, birthdays, anniversaries, and more. Let us make
+                            your special day even sweeter with our homemade creations. Each cake is crafted with care
+                            using the finest ingredients and decorated to match your vision.
+                        </p>
+                        <div class="cakes-occasions">
+                            <div class="occasion-item">
+                                <span class="material-icons">cake</span>
+                                <span>Weddings</span>
+                            </div>
+                            <div class="occasion-item">
+                                <span class="material-icons">celebration</span>
+                                <span>Birthdays</span>
+                            </div>
+                            <div class="occasion-item">
+                                <span class="material-icons">favorite</span>
+                                <span>Anniversaries</span>
+                            </div>
+                            <div class="occasion-item">
+                                <span class="material-icons">star</span>
+                                <span>Special Events</span>
+                            </div>
+                        </div>
+                        <a href="#location" class="btn btn-secondary">Enquire Now</a>
                     </div>
-                    <div class="contact-item">
-                        <h3>Hours</h3>
-                        <p>Open Daily<br>Please visit us for current hours</p>
+                    <div class="cakes-image">
+                        <div class="image-placeholder">
+                            <span class="material-icons">cake</span>
+                        </div>
                     </div>
-                    <div class="contact-item">
-                        <h3>Experience</h3>
-                        <p>Come taste the difference of homecooked, locally-sourced food</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu" class="menu section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Local Menu</h2>
+                    <p>Authentic flavors of Apoera, prepared fresh daily. Choose your favorite items in our Small or Large selection sizes.</p>
+                </div>
+
+                <div class="menu-categories">
+                    <div class="menu-category">
+                        <div class="category-header">
+                            <span class="material-icons">rice_bowl</span>
+                            <h3>Rijst</h3>
+                        </div>
+                        <ul class="category-items">
+                            <li>Nasi gebakken kip</li>
+                            <li>Witte rijst kip</li>
+                            <li>Witte rijst wild (pingo, pakira, haas, hert)</li>
+                            <li>Witte rijst gebakken vis</li>
+                            <li>Moxaselsi</li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <div class="category-header">
+                            <span class="material-icons">ramen_dining</span>
+                            <h3>Bamie</h3>
+                        </div>
+                        <ul class="category-items">
+                            <li>Bamie gebakken kip</li>
+                            <li>Bamie oven kip</li>
+                            <li>Tawmin kip</li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <div class="category-header">
+                            <span class="material-icons">soup_kitchen</span>
+                            <h3>Soep</h3>
+                        </div>
+                        <ul class="category-items">
+                            <li>Cassave soep</li>
+                            <li>Alla kondre soep</li>
+                            <li>Groenten soep <span class="tag">Veg</span></li>
+                            <li>Taboo</li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <div class="category-header">
+                            <span class="material-icons">flatware</span>
+                            <h3>Roti</h3>
+                        </div>
+                        <ul class="category-items">
+                            <li>Kip, Wild, Doks</li>
+                            <li>Roti types: Daal, Prarata roti</li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <div class="category-header">
+                            <span class="material-icons">dinner_dining</span>
+                            <h3>Pasta</h3>
+                        </div>
+                        <ul class="category-items">
+                            <li>Macaroni</li>
+                            <li>Alfredo pasta</li>
+                        </ul>
+                    </div>
+
+                    <div class="menu-category">
+                        <div class="category-header">
+                            <span class="material-icons">fastfood</span>
+                            <h3>Snacks</h3>
+                        </div>
+                        <ul class="category-items snacks-list">
+                            <li>Loempia</li>
+                            <li>Bara</li>
+                            <li>Kroket</li>
+                            <li>Sosijs brood</li>
+                            <li>Pizza</li>
+                            <li>Donuts</li>
+                            <li>Red belly</li>
+                            <li>Banaan chips</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Pricing -->
+                <div class="pricing-grid">
+                    <div class="pricing-card">
+                        <div class="pricing-badge">LIGHT BITE</div>
+                        <h4>Small Selection</h4>
+                        <div class="pricing-amount">
+                            <span class="amount">250</span>
+                            <span class="currency">SRD</span>
+                        </div>
+                        <p>Choose a smaller portion of any main dish or a selection of snacks.</p>
+                    </div>
+                    <div class="pricing-card pricing-popular">
+                        <div class="pricing-badge popular-badge">MOST POPULAR</div>
+                        <h4>Large Selection</h4>
+                        <div class="pricing-amount">
+                            <span class="amount">500</span>
+                            <span class="currency">SRD</span>
+                        </div>
+                        <p>Our hearty full-size village meal. Perfect for a complete dining experience.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="location section section-alt">
+            <div class="container">
+                <div class="location-grid">
+                    <div class="location-info">
+                        <h2>Find Us in Apoera</h2>
+                        <div class="info-items">
+                            <div class="info-item">
+                                <span class="material-icons info-icon">location_on</span>
+                                <div>
+                                    <p class="info-label">Address</p>
+                                    <p>Main Village Road, Apoera, Sipaliwini, Suriname</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="material-icons info-icon">schedule</span>
+                                <div>
+                                    <p class="info-label">Opening Hours</p>
+                                    <p>Mon – Sat: 7:00 AM – 6:00 PM</p>
+                                    <p>Sun: 8:00 AM – 2:00 PM</p>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <span class="material-icons info-icon">call</span>
+                                <div>
+                                    <p class="info-label">Contact</p>
+                                    <p>+597-888-Apoera</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="location-image">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqJhchsltAa9xY564xfJ28Y4YUdymNGf3uLx90s0mAeZA85Fz_RFAiu5WdsXqCeXSuOLYMyzt806Xlo3dCRCKm1zr4R6m1h0FConX8Bt-E35_yxDpkM_37jMre1aLwbkTdgdpcvgEivtraS-f0gvOP1_XZvFCJIO5SIW0L-QqEtFSJVe6Mc7WSJ4GYRcLLM8V5DaYhqTg_eqV7Y_F0iF-QzJZXAkuoYaTxry_yrWPRObhY_3SCEjsn5veCMORqiV-t_gwywG_tSxcS" alt="Apoera village surroundings" loading="lazy">
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Rosu Cafe - Apoera. Serving our community with love and tradition.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="material-icons">bakery_dining</span>
+                        <span>Apoera Cafe</span>
+                    </div>
+                    <p>Bringing the best of Apoera to your table.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Social media" class="social-link"><span class="material-icons">social_leaderboard</span></a>
+                        <a href="#" aria-label="Photos" class="social-link"><span class="material-icons">photo_camera</span></a>
+                        <a href="#" aria-label="Email" class="social-link"><span class="material-icons">mail</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Apoera Cafe. All rights reserved.</p>
+                <p>Sipaliwini District, Suriname</p>
+            </div>
         </div>
     </footer>
 

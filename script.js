@@ -1,59 +1,126 @@
-// Smooth scrolling for navigation links
+// Mobile navigation toggle
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navLinks) {
+    navToggle.addEventListener('click', () => {
+        const isOpen = navLinks.classList.toggle('open');
+        navToggle.querySelector('.material-icons').textContent = isOpen ? 'close' : 'menu';
+        navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('open');
+            navToggle.querySelector('.material-icons').textContent = 'menu';
+            navToggle.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+
+// Smooth scrolling for all anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return;
+        const target = document.querySelector(targetId);
         if (target) {
-            const headerOffset = 80;
-            const elementPosition = target.getBoundingClientRect().top;
-            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
+            e.preventDefault();
+            const headerHeight = document.getElementById('header').offsetHeight;
+            const elementPosition = target.getBoundingClientRect().top + window.pageYOffset;
             window.scrollTo({
-                top: offsetPosition,
+                top: elementPosition - headerHeight,
                 behavior: 'smooth'
             });
         }
     });
 });
 
-// Add scroll effect to header
-let lastScroll = 0;
-const header = document.querySelector('header');
-
+// Header shadow on scroll
+const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-    const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > 100) {
-        header.style.boxShadow = '0 4px 10px rgba(0, 0, 0, 0.2)';
+    if (window.pageYOffset > 50) {
+        header.classList.add('scrolled');
     } else {
-        header.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.1)';
+        header.classList.remove('scrolled');
     }
-    
-    lastScroll = currentScroll;
 });
 
-// Add animation on scroll for menu items
-const observerOptions = {
-    threshold: 0.2,
-    rootMargin: '0px 0px -50px 0px'
-};
+// Highlight active nav link based on scroll position
+const sections = document.querySelectorAll('main section[id]');
+const navLinkEls = document.querySelectorAll('.nav-link');
 
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+function updateActiveLink() {
+    const scrollY = window.pageYOffset;
+    const headerHeight = header.offsetHeight;
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - headerHeight - 60;
+        const sectionBottom = sectionTop + section.offsetHeight;
+        const id = section.getAttribute('id');
+        const link = document.querySelector(`.nav-link[href="#${id}"]`);
+        if (link) {
+            if (scrollY >= sectionTop && scrollY < sectionBottom) {
+                navLinkEls.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            }
         }
     });
-}, observerOptions);
+}
 
-// Observe menu items for animation
-document.addEventListener('DOMContentLoaded', () => {
-    const menuItems = document.querySelectorAll('.menu-item');
-    menuItems.forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateY(20px)';
-        item.style.transition = `opacity 0.5s ease ${index * 0.1}s, transform 0.5s ease ${index * 0.1}s`;
-        observer.observe(item);
-    });
+window.addEventListener('scroll', updateActiveLink);
+updateActiveLink();
+
+// Reveal on scroll (Intersection Observer)
+const revealElements = document.querySelectorAll(
+    '.about-grid, .cakes-grid, .menu-category, .pricing-card, .location-grid, .section-header'
+);
+
+revealElements.forEach(el => {
+    el.classList.add('reveal');
 });
+
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+});
+
+revealElements.forEach(el => revealObserver.observe(el));
+
+// Staggered reveal for grid children (menu categories, pricing cards)
+const staggerContainers = [
+    { parent: '.menu-categories', children: '.menu-category', delay: 80 },
+    { parent: '.pricing-grid', children: '.pricing-card', delay: 120 }
+];
+
+staggerContainers.forEach(({ parent, children, delay }) => {
+    const parentEl = document.querySelector(parent);
+    if (!parentEl) return;
+    const items = parentEl.querySelectorAll(children);
+    items.forEach(item => {
+        item.classList.add('reveal');
+    });
+
+    const staggerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const items = entry.target.querySelectorAll(children);
+                items.forEach((item, index) => {
+                    setTimeout(() => item.classList.add('visible'), index * delay);
+                });
+                staggerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+
+    staggerObserver.observe(parentEl);
+});
+
