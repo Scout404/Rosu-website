@@ -119,6 +119,12 @@
             margin-left: 4px;
             vertical-align: middle;
         }
+        .card-img-placeholder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
     </style>
 </head>
 <body>
@@ -156,7 +162,7 @@
             <div class="container">
                 <div id="menu-root" style="margin-bottom: 56px;"></div>
 
-                <div class="pricing-grid">
+                <!-- <div class="pricing-grid">
                     <div class="pricing-card">
                         <div class="pricing-badge">KLEINE PORTIE</div>
                         <h4>Kleine Portie</h4>
@@ -175,7 +181,7 @@
                         </div>
                         <p>Een grotere portie van hetzelfde gerecht, perfect voor wie extra trek heeft.</p>
                     </div>
-                </div>
+                </div> -->
             </div>
         </section>
     </main>
@@ -205,7 +211,7 @@
         {
             icon: "🍚", title: "Rijst",
             items: [
-                { name: "Nasi met gebakken kip",       desc: "Gebakken rijst met krokante stukjes kip en Surinaamse kruiden.", emoji: "🍳" },
+                { name: "Nasi met gebakken kip\n(Meest Gekocht)",       desc: "Gebakken rijst met krokante stukjes kip of oven kip en groenten mix kruiden.", img: "Assests/Rosu/Food/IMG_0157.png" },
                 { name: "Witte rijst met kip",          desc: "Gestoomde witte rijst geserveerd met malse gekruide kip.",       emoji: "🍗" },
                 { name: "Witte rijst met Pingo",        desc: "Witte rijst met sappig wildvlees van de pingo (tapir).",         emoji: "🥩" },
                 { name: "Witte rijst met Pakira",       desc: "Rijst met vlees van de pakira (wilde beer), zacht en aromatisch.", emoji: "🥩" },
@@ -229,7 +235,7 @@
                 { name: "Cassave soep",     desc: "Rijkgevulde soep van verse cassave met kruiden en groenten.",          emoji: "🥣" },
                 { name: "Alla kondre soep", desc: "Traditionele 'alles uit het land' soep met lokale groenten en vlees.", emoji: "🍵" },
                 { name: "Groenten soep",    desc: "Lichte verse groentesoep, vegetarisch en voedzaam.", emoji: "🥦", veg: true },
-                { name: "Peperpot (taboe)", desc: "Donkere stoofpot op basis van kassiri en kruiden, een klassieker.",    emoji: "🫕" },
+                { name: "Taboe (Peperpot)", desc: "Donkere stoofpot op basis van kassiri en kruiden, een klassieker.",    emoji: "🫕" },
             ]
         },
         {
@@ -245,20 +251,20 @@
             icon: "🍝", title: "Pasta",
             items: [
                 { name: "Macaroni",      desc: "Smeuïge macaroni met Surinaamse saus, huisgemaakte stijl.",     emoji: "🍝" },
-                { name: "Alfredo pasta", desc: "Romige pasta in een rijke kaas-roomsaus, mild en comfortfood.", emoji: "🍝" },
+                { name: "Alfredo pasta", desc: "Romige pasta in een rijke kaas-roomsaus, mild en comfortfood.", img: "Assests/Rosu/Food/Alfredo pasta.jpg" },
             ]
         },
         {
             icon: "🧆", title: "Snacks",
             items: [
                 { name: "Loempia",         desc: "Krokante rolletjes gevuld met groenten en vlees.",       img: "Assests/Loempia.jpg" },
-                { name: "Bara",            desc: "Gefrituurde spliterwtenballetjes, zacht van binnen.",     img: "Assests/Bara.png" },
-                { name: "Kroket",          desc: "Klassieke krokante kroket, vers gebakken.",               emoji: "🥙" },
+                { name: "Bara",            desc: "Gefrituurde spliterwtenballetjes, zacht van binnen.",     img: "Assests/Rosu/IMG_0155.png" },
+                { name: "Kroket",          desc: "Klassieke krokante kroket, vers gebakken.",               img: "Assests/Rosu/kroket.jpg" },
                 { name: "Saucijzen brood", desc: "Zacht broodje gevuld met gekruide gehaktworst.",         emoji: "🥐" },
-                { name: "Pizza",           desc: "Huisgemaakte pizza met verse lokale toppings.",           emoji: "🍕" },
-                { name: "Donuts",          desc: "Zachte luchtige donuts, dagelijks vers gebakken.",        emoji: "🍩" },
-                { name: "Red belly",       desc: "Lokale snack op basis van rood gekruid gehakt.",         emoji: "🌶️" },
-                { name: "Banaan chips",    desc: "Krokant gefrituurde bananenschijfjes, licht gezouten.",   emoji: "🍌" },
+                { name: "Pizza",           desc: "Huisgemaakte pizza met verse lokale toppings.",           img: "Assests/Rosu/Snacks/6c7c114a-6480-41ad-8f7d-70caeacdc46f.jpg", priceLabel: "50 SRD", portionLabel: "per slice" },
+                { name: "Donuts",          desc: "Zachte luchtige donuts, dagelijks vers gebakken.",        img: "Assests/Rosu/Snacks/Donuts2.jpg", priceLabel: "3 voor 50 SRD", portionLabel: "actie" },
+                { name: "Red belly",       desc: "Gefrituurd broodje gevuld met zoete, gekruide kokos met een kenmerkende rode vulling. Een traditionele Guyanese lekkernij",         img: "Assests/Rosu/Snacks/IMG_0158.png" },
+                { name: "Banaan chips",    desc: "Krokant gefrituurde bananenschijfjes, licht gezouten.",   img: "Assests/Rosu/Snacks/IMG_0156.png" },
             ]
         },
         {
@@ -267,10 +273,36 @@
                 { name: "Witte puntjes",      desc: "Verse knapperige puntbroodjes, dagelijks gebakken.",   emoji: "🥖" },
                 { name: "Bake (Johnny cake)", desc: "Zachte gebakken bolletjes, een Caraïbische klassieker.", emoji: "🫓" },
             ]
+        },
+        {
+            icon: "", title: "Drank",
+            items: [
+                { name: "slush", desc: "", img: "Assests/Rosu/drank/IMG_0159.png", priceLabel: "50 SRD", portionLabel: "per cup" },
+                { name: "Verse sappen", desc: "Dagelijks vers geperste sappen van lokale vruchten.", img: "Assests/Rosu/drank/IMG_0160.png", priceLabel: "20 SRD", portionLabel: "per glas" },
+                { name: "Kokosnoot water", desc: "Verfrissend natuurlijk kokoswater, direct uit de noot geserveerd.", img: "Assests/Rosu/drank/IMG_0161.png", priceLabel: "15 SRD", portionLabel: "per stuk" },
+                { name: "Coca cola", desc: "Klassieke frisdrank, perfect om te combineren met onze gerechten.", img: "Assests/Rosu/drank/IMG_0162.png", priceLabel: "50 SRD", },
+                { name: "Cocktails", priceLabel: "Vanaf 50 SRD", desc: "Huisgemaakte cocktails met verse ingrediënten en lokale smaken.", img: "Assests/Rosu/drank/IMG_0163.png" },
+            ]
         }
     ];
 
+    const DEFAULT_SMALL_PRICE = 250;
+    const DEFAULT_LARGE_PRICE = 300;
+
     const root = document.getElementById('menu-root');
+
+    function getPriceBadge(item) {
+        if (item.priceLabel) return item.priceLabel;
+
+        const small = item.smallPrice ?? DEFAULT_SMALL_PRICE;
+        const large = item.largePrice ?? DEFAULT_LARGE_PRICE;
+        return `${small} <span>/ ${large} SRD</span>`;
+    }
+
+    function getPortionLabel(item) {
+        if (item.portionLabel) return item.portionLabel;
+        return 'klein / groot';
+    }
 
     categories.forEach(cat => {
         const section = document.createElement('div');
@@ -294,8 +326,8 @@
                             <div class="card-name">${item.name}${item.veg ? '<span class="tag-veg">Veg</span>' : ''}</div>
                             <div class="card-desc">${item.desc}</div>
                             <div class="card-footer">
-                                <span class="price-badge">250 <span>/ 300 SRD</span></span>
-                                <span class="portion-label">klein / groot</span>
+                                <span class="price-badge">${getPriceBadge(item)}</span>
+                                <span class="portion-label">${getPortionLabel(item)}</span>
                             </div>
                         </div>
                     </div>
