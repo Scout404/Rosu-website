@@ -441,6 +441,37 @@ a { text-decoration: none; color: inherit; }
 .pricing-amount .currency { font-size: 1.1rem; font-weight: 600; color: var(--color-text-muted); }
 .pricing-card p { font-size: 0.95rem; color: var(--color-text-muted); line-height: 1.6; }
 
+.menu-image {
+    position: relative;
+    width: 100%;
+    height: 180px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: 16px;
+}
+
+.menu-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.menu-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(124, 75, 42, 0.35); /* 🔥 adjust this */
+}
+
+.menu-image img {
+    transition: transform 0.4s ease, filter 0.4s ease;
+    filter: saturate(85%) contrast(95%);
+}
+
+.menu-category:hover .menu-image img {
+    transform: scale(1.05);
+}
+
 /* =============================================
    Location
    ============================================= */
